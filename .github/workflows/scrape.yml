@@ -13,7 +13,8 @@ jobs:
           - name: Check out this repo
             uses: actions/checkout@v2
           - name: Fetch latest data
-            run: curl https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv | jq . > mlb_elo.csv
+            run: |-
+              curl https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv | jq . > mlb_elo.csv
           - name: Commit and push if it changed
             run: |-
               git config user.name "Automated"
