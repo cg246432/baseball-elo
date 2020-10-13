@@ -3,7 +3,7 @@ name: Scrape mlb data
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '21 * * * *'
+    - cron: '21 0 * * *'
 
 jobs:
     scheduled:
@@ -13,7 +13,7 @@ jobs:
             uses: actions/checkout@v2
           - name: Fetch latest data
             run: |-
-              curl https://projects.fivethirtyeight.com/mlb-api/mlb_elo_latest.csv > data/mlb_elo.csv
+              curl https://projects.fivethirtyeight.com/mlb-api/mlb_elo.csv > data/mlb_elo.csv
           - name: Commit and push data files
             run: |-
               git config user.name "Automated"
