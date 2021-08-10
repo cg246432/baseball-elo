@@ -1,1 +1,1 @@
-# sports-weather
+# mlb elo scraped via github actions
